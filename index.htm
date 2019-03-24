@@ -9,6 +9,9 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 		<!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+		<!--Angular SPA-->
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
 		<!-- jQuery library -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<!-- Popper JS -->
@@ -30,7 +33,7 @@
 			});
 		</script>
 	</head>
-	<body>
+	<body ng-app="myApp">
 		<!--Navbar-->
 		<nav class="navbar navbar-fixed-top" id="main-navbar" role="navigation">
 			<div class="container">
@@ -41,15 +44,34 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a href="index.htm" class="navbar-brand">Bonica's Pizza</a>
+					<a href="#!home" class="navbar-brand">Bonica's Pizza</a>
 				</div><!--End Navbar header-->
 				<div class="collapse navbar-collapse" id="navbar-collapse">
 					<ul class="nav navbar-nav navbar-right">
-						<li><a href="#about">About</a></li>
-						<li><a href="#menu">Menu</a></li>
-						<li><a href="#jobs">Jobs</a></li>
-						<li><a href="#nutrition">Nutrition</a></li>
-						<li><a href="#community">Community</a></li>
+						<li><a href="#!home">Home</a></li>
+						<!-- Dropdown -->
+						<li class="dropdown">
+							<a class="dropdown-toggle" href="#!about" id="navbardrop" data-toggle="dropdown">
+								About <span class="caret"></span>
+							</a>
+							<ul class="dropdown-menu">
+								<li><a class="dropdown-item" href="#!contact">Contact Us</a></li>
+							</ul>
+						</li> 
+						<!-- Dropdown -->
+						<li class="dropdown">
+							<a class="dropdown-toggle" href="#!menu" id="navbardrop" data-toggle="dropdown">
+								Menu <span class="caret"></span>
+							</a>
+							<ul class="dropdown-menu">
+								<li><a class="dropdown-item" href="#!originals">Originals</a></li>
+								<li><a class="dropdown-item" href="#!favorites">Favorites</a></li>
+								<li><a class="dropdown-item" href="#!customize">Customize</a></li>
+							</ul>
+						</li> 
+						<li><a href="#!jobs">Jobs</a></li>
+						<li><a href="#!nutrition">Nutrition</a></li>
+						<li><a href="#!community">Community</a></li>
 					</ul>
 				</div><!--end collapse-->
 			</div><!--end container-->
@@ -67,100 +89,10 @@
 				</div><!--end container-->
 			</div><!--end jumbotron-->
 		</header>
-		<div class="container">
-			<section>
-				<div class="page-header" id="about">
-					<h2>About. <small>This is the about section</small></h2>
-				</div>
-				<div class="row">
-					<div class="col-md-4">
-						<blockquote>
-							<p>This is an awesome product and I love it all the way!</p>
-							<footer>Author</footer>
-						</blockquote>
-					</div>
-					<div class="col-md-4">
-						<blockquote>
-							<p>This is an awesome product and I love it all the way!</p>
-							<footer>Author</footer>
-						</blockquote>
-					</div>
-					<div class="col-md-4">
-						<blockquote>
-							<p>This is an awesome product and I love it all the way!</p>
-							<footer>Author</footer>
-						</blockquote>
-					</div>
-				</div><!--end row-->
-				<p class="text-center"><em>Wanna tell us about the product? Click the following button.</em></p>
-				<p class="text-center"><a href="#contact" class="btn btn-default">Contact Us</a></p>
-			</section>
-			<!--menu-->
-			<section>
-				<div class="page-header" id="menu">
-					<h2>Menu. <small>These are the menu of our product.</small></h2>
-				</div>
-				<div class="row">
-					<div class="col-md-8">
-						<h3>This is a feature title</h3>
-						<p>This is the description of these menu</p>
-					</div>
-					<div class="col-md-4">
-						<img src="img/placeholder.png" alt="Feature Image" class="img-responsive">
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-8">
-						<h3>This is a feature title</h3>
-						<p>This is the description of these menu</p>
-					</div>
-					<div class="col-md-4">
-						<img src="img/placeholder.png" alt="Feature Image" class="img-responsive">
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-8">
-						<h3>This is a feature title</h3>
-						<p>This is the description of these menu</p>
-					</div>
-					<div class="col-md-4">
-						<img src="img/placeholder.png" alt="Feature Image" class="img-responsive">
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-4">
-						<div class="panel panel-default text-center">
-							<div class="panel-body">
-								<span class="glyphicon glyphicon-search"></span>
-								<h4>This is another feaure</h4>
-								<p>This feature is awesome for this product</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-4">
-						<div class="panel panel-default text-center">
-							<div class="panel-body">
-								<span class="glyphicon glyphicon-ok"></span>
-								<h4>This is another feaure</h4>
-								<p>This feature is awesome for this product</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-4">
-						<div class="panel panel-default text-center">
-							<div class="panel-body">
-								<span class="glyphicon glyphicon-time"></span>
-								<h4>This is another feaure</h4>
-								<p>This feature is awesome for this product</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
 
-		</div><!--end container-->
+		<div ng-view></div><!--end ng-view-->
 
-		<!--Tirals-->
+		<!--Trials-->
 		<section>
 			<div class="well">
 				<div class="container text-center">
@@ -181,124 +113,44 @@
 				</div><!--end container-->
 			</div><!--end well-->
 		</section>
-
-		<div class="container">
-			<!--jobs-->
-			<section>
-				<div class="page-header" id="jobs">
-					<h2>Jobs. <small>Take a look at our jobs product images.</small></h2>
-				</div>
-				<div class="carousel slide" id="gallery-carousel" data-ride="carousel">
-					<ol class="carousel-indicators">
-						<li datag-target="#gallery-carousel" data-slide-to="0" class="active"></li>
-						<li datag-target="#gallery-carousel" data-slide-to="1"></li>
-						<li datag-target="#gallery-carousel" data-slide-to="2"></li>
-					</ol>
-
-					<div class="carousel-inner">
-						<div class="item active">
-							<img src="img/placeholder.png" alt="SLider Image" images="">
-							<div class="carousel-caption">This is a caption 1.</div>
-						</div>
-						<div class="item">
-							<img src="img/placeholder.png" alt="SLider Image" images="">
-							<div class="carousel-caption">This is a caption 2.</div>
-						</div>
-						<div class="item">
-							<img src="img/placeholder.png" alt="SLider Image" images="">
-							<div class="carousel-caption">This is a caption 3.</div>
-						</div>
-					</div>
-
-					<a href="#gallery-carousel" class="left carousel-control" data-slide="prev">
-						<span class="glyphicon glyphicon-chevron-left"></span>
-					</a>
-					<a href="#gallery-carousel" class="right carousel-control" data-slide="next">
-						<span class="glyphicon glyphicon-chevron-right"></span>
-					</a>
-				</div>
-			</section>
-			<!--nutrition-->
-			<section>
-				<div class="page-header" id="nutrition">
-					<h2>Nutrition. <small>This will help get you started.</small></h2>
-				</div><!--end page-header-->
-				<div class="panel-group" id="accordion-qa">
-					<div class="panel panel-default">
-						<div class="panel panel-heading">
-							<h4 class="panel-title"><a href="#qa-1" data-toggle="collapse" data-parent="#accordion-qa">Question 1</a></h4>
-						</div>
-						<div class="panel-collapse collapse in" id="qa-1">
-							<div class="panel-body">
-								This is where you will get info about your question 1.
-							</div><!--end panel body-->
-						</div><!--end collapse-->
-					</div><!--end panel-->
-					<div class="panel panel-default">
-						<div class="panel panel-heading">
-							<h4 class="panel-title"><a href="#qa-2" data-toggle="collapse" data-parent="#accordion-qa">Question 2</a></h4>
-						</div>
-						<div class="panel-collapse collapse" id="qa-2">
-							<div class="panel-body">
-								This is where you will get info about your question 2.
-							</div><!--end panel body-->
-						</div><!--end collapse-->
-					</div><!--end panel-->
-					<div class="panel panel-default">
-						<div class="panel panel-heading">
-							<h4 class="panel-title"><a href="#qa-3" data-toggle="collapse" data-parent="#accordion-qa">Question 3</a></h4>
-						</div>
-						<div class="panel-collapse collapse" id="qa-3">
-							<div class="panel-body">
-								This is where you will get info about your question 3.
-							</div><!--end panel body-->
-						</div><!--end collapse-->
-					</div><!--end panel-->
-				</div><!--end panel-group-->
-			</section>
-			<!--community-->
-			<section>
-				<div class="page-header" id="community">
-					<h2>Community. <small>Lets get in touch.</small></h2>
-				</div>
-				<div class="row">
-					<div class="col-md-4">
-						<p>To send us a message, use the contact form info below</p>
-						<address>
-							<strong>Web Labs, Ltd</strong><br>
-							Lisbon, Portugal, 2780-105<br>
-							<abbr title="Phone">P: </abbr> +5555555555
-						</address>
-					</div>
-					<div class="col-md-8">
-						<form action="#" class="form-horizontal" role="form">
-							<div class="form-group">
-								<label for="contact-name" class="col-md-2 control-label">Name</label>
-								<div class="col-md-10">
-									<input type="text" class="form-control" id="contact-name" placeholder="Name">
-								</div>
-							</div>
-							<div class="form-group">
-								<label for="contact-email" class="col-md-2 control-label">Email</label>
-								<div class="col-md-10">
-									<input type="text" class="form-control" id="contact-email" placeholder="Email">
-								</div>
-							</div>
-							<div class="form-group">
-								<label for="contact-msg" class="col-md-2 control-label">Message</label>
-								<div class="col-md-10">
-									<textarea name="contact-message" id="contact-message" class="form-control" cols="30" rows="10" placeholder="Message"></textarea>
-								</div>
-							</div>
-							<div class="form-group">
-								<div class="col-md-10 col-md-offset-2">
-									<button type="submit" class="btn btn-primary">Send Message</button>
-								</div>
-							</div>
-						</form>
-					</div>
-				</div>
-			</section>
-		</div><!--end container-->
+		<script>
+			var app = angular.module("myApp", ["ngRoute"]);
+			app.config(function($routeProvider) {
+			  $routeProvider
+			  .when("/", {
+				templateUrl : "home.htm"
+			  })
+			  .when("/about", {
+				templateUrl : "about.htm"
+			  })
+			  .when("/contact", {
+				templateUrl : "contact.htm"
+			  })
+			  .when("/community", {
+				templateUrl : "community.htm"
+			  })
+			  .when("/jobs", {
+				templateUrl : "jobs.htm"
+			  })
+			  .when("/menu", {
+				templateUrl : "menu.htm"
+			  })
+			  .when("/originals", {
+				templateUrl : "originals.htm"
+			  })
+			  .when("/favorites", {
+				templateUrl : "favorites.htm"
+			  })
+			  .when("/customize", {
+				templateUrl : "customize.htm"
+			  })
+			  .when("/nutrition", {
+				templateUrl : "nutrition.htm"
+			  })
+			  .otherwise({
+				templateUrl : "home.htm"
+			  });
+			});
+		</script>
 	</body>
 </html>

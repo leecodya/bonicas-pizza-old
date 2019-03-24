@@ -35,23 +35,26 @@ nav a{
     background-color: #222222;
     transition: background-color 0.5s ease 0s;
     box-shadow: 0 0 4px grey;
+}
   
       /* .navbar-brand {
         color: #C57ED3;
         transition: color 1s ease 0s;
       } */
-  
-      .navbar-nav {
-  
-         > li {
-  
-            > a {
-              color: #C57ED3;
-              transition: color 0.5s ease 0s;
-            }
-  
-         } /*end li*/
-  
-      } /*end .navbar-nav*/
-  
-  }
+.navbar-nav > li > a {
+    color: #FFF;
+    transition: color 0.5s ease 0s;  
+}
+.navbar-nav > li > a:hover {
+    color: black;
+    background-color: none !important;
+    transition: color 0.5s ease 0s;  
+}
+.navbar-nav > li > a:active {
+    color: black;
+    background-color: none;
+    transition: color 0.5s ease 0s;  
+}
+.nav .open>a, .nav .open>a:hover, .nav .open>a:focus{
+    color: black;
+}
