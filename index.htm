@@ -48,30 +48,30 @@
 				</div><!--End Navbar header-->
 				<div class="collapse navbar-collapse" id="navbar-collapse">
 					<ul class="nav navbar-nav navbar-right">
-						<li><a href="#!home">Home</a></li>
+						<li onclick="closeMenu()"><a href="#!home">Home</a></li>
 						<!-- Dropdown -->
-						<li class="dropdown">
+						<li class="dropdown" onclick="closeMenu()">
 							<a class="dropdown-toggle" href="#!about" id="navbardrop" data-toggle="dropdown">
 								About <span class="caret"></span>
 							</a>
 							<ul class="dropdown-menu">
-								<li><a class="dropdown-item" href="#!contact">Contact Us</a></li>
+								<li onclick="closeMenu()"><a class="dropdown-item" href="#!contact">Contact Us</a></li>
 							</ul>
 						</li> 
 						<!-- Dropdown -->
-						<li class="dropdown">
+						<li class="dropdown" onclick="closeMenu()">
 							<a class="dropdown-toggle" href="#!menu" id="navbardrop" data-toggle="dropdown">
 								Menu <span class="caret"></span>
 							</a>
 							<ul class="dropdown-menu">
-								<li><a class="dropdown-item" href="#!originals">Originals</a></li>
-								<li><a class="dropdown-item" href="#!favorites">Favorites</a></li>
-								<li><a class="dropdown-item" href="#!customize">Customize</a></li>
+								<li onclick="closeMenu()"><a class="dropdown-item" href="#!originals">Originals</a></li>
+								<li onclick="closeMenu()"><a class="dropdown-item" href="#!favorites">Favorites</a></li>
+								<li onclick="closeMenu()"><a class="dropdown-item" href="#!customize">Customize</a></li>
 							</ul>
 						</li> 
-						<li><a href="#!jobs">Jobs</a></li>
-						<li><a href="#!nutrition">Nutrition</a></li>
-						<li><a href="#!community">Community</a></li>
+						<li onclick="closeMenu()"><a href="#!jobs">Jobs</a></li>
+						<li onclick="closeMenu()"><a href="#!nutrition">Nutrition</a></li>
+						<li onclick="closeMenu()"><a href="#!community">Community</a></li>
 					</ul>
 				</div><!--end collapse-->
 			</div><!--end container-->
@@ -90,22 +90,24 @@
 			</div><!--end jumbotron-->
 		</header>
 
-		<div ng-view></div><!--end ng-view-->
+        <div class="containter" style="float:left; margin:2%; width:80%">
+            <div ng-view></div><!--end ng-view-->
+        </div>
 
 		<!--Trials-->
-		<section>
+		<section style="float:right; margin-top:5%; margin-right:3%; width:11%">
 			<div class="well">
-				<div class="container text-center">
-					<h3>Subscribe now for a 30-day free trial!</h3>
+				<div class="text-center">
+					<h4>Subscribe now for a 30-day free trial!</h4>
 					<p>Enter your name and email below</p>
 					<form action="#" class="form-inline" role="form">
 						<div class="form-group">
 							<label for="subscribe-name" class="sr-only">Name</label>
-							<input type="text" class="form-control" id="subscribe-name" placeholder="Name">
+							<input type="text" class="form-control" id="subscribe-name" size=10 placeholder="Name">
 						</div><!--end form group-->
 						<div class="form-group">
 							<label for="subscribe-email" class="sr-only">Email</label>
-							<input type="text" class="form-control" id="subscribe-email" placeholder="Email">
+							<input type="text" class="form-control" id="subscribe-email" size=10 placeholder="Email">
 						</div><!--end form group-->
 						<button type="submit" class="btn btn-default">Subscribe</button>
 						<p><small><em>Your email will not be used to SPAM</em></small></p>
@@ -151,6 +153,14 @@
 				templateUrl : "home.htm"
 			  });
 			});
-		</script>
+
+            var closeMenu = function()  {
+                var nav = document.getElementById('navbar-collapse');
+
+                nav.classList.remove('in');
+                document.body.scrollTop = 0; // For Chrome, Safari and Opera
+                document.documentElement.scrollTop = 0; // For IE and Firefox
+            }
+        </script>
 	</body>
 </html>

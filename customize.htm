@@ -4,19 +4,31 @@
             <h2>Customize. <small>Mix and Match any crust, sauce, and toppings for only $11!</small></h2>
         </div>
     </div>
-    <div class="row well2">
-        <div class="container text-center">
+    <div class="container well2">
+        <div class="text-center">
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-3">
                     <h3><strong>Crusts</strong></h3>
-                    <h4>
-                        <ul style="list-style-type:none !important">
-                            <li>Thin</li>
-                            <li>Traditional</li>
-                        </ul>
-                    </h4>
+                    <select id="crusts" onchange="plzChange()">
+                        <option value="">--Select--</option>
+                        <option value="Audi">Audi</option>
+                        <option value="BMW">BMW</option>
+                        <option value="Mercedes">Mercedes</option>
+                        <option value="Volvo">Volvo</option>
+                    </select>
+                    
+                    <p>When you select a new car, a function is triggered which outputs the value of the selected car.</p>
+                    
+                    <p id="demo"></p>
+                    
+                    <script>
+                        function plzChange() {
+                            var x = document.getElementById("crusts").value;
+                            document.getElementById("demo").innerHTML = "You selected: " + x;
+                        }
+                    </script>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-3">
                     <h3><strong>Cheeses</strong></h3>
                     <h4>
                         <ul style="list-style-type:none !important">
@@ -26,9 +38,7 @@
                         </ul>
                     </h4>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-3">
                     <h3><strong>Sauces</strong></h3>
                     <h4>
                         <ul style="list-style-type:none !important">
@@ -49,7 +59,7 @@
                         </ul>
                     </h4>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-3">
                     <h3><strong>Toppings</strong></h3>
                     <h4>
                         <ul style="list-style-type:none !important">
@@ -93,8 +103,8 @@
                             </div>
                         </ul>
                     </h4>
-                </div>
-            </div>
-        </div>
+                </div><!--end column-->
+            </div><!--end row-->
+        </div><!--end container-->
     </div>
 </div>

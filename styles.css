@@ -54,16 +54,19 @@ nav a{
     color: #FFF;
     transition: color 0.5s ease 0s;  
 }
-.navbar-nav > li > a:hover {
-    color: black;
-    background-color: none !important;
+.navbar-nav > li > a:link,
+.navbar-nav > li > a:visited,
+.navbar-nav > li > a:hover,
+.navbar-nav > li > a:active {
+    color: white;
+    background-color: transparent !important;
     transition: color 0.5s ease 0s;  
 }
-.navbar-nav > li > a:active {
+/* .navbar-nav > li > a:active {
     color: black;
     background-color: none;
     transition: color 0.5s ease 0s;  
-}
-.nav .open>a, .nav .open>a:hover, .nav .open>a:focus{
+} */
+/* .nav .open>a, .nav .open>a:hover, .nav .open>a:focus{
     color: black;
-}
+} */
