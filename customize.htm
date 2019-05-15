@@ -9,22 +9,22 @@
             <div class="row">
                 <div class="col-md-3">
                     <h3><strong>Crusts</strong></h3>
-                    <select id="crusts" onchange="plzChange()">
-                        <option value="">--Select--</option>
-                        <option value="Audi">Audi</option>
-                        <option value="BMW">BMW</option>
-                        <option value="Mercedes">Mercedes</option>
-                        <option value="Volvo">Volvo</option>
+                    <p id="mytext"></p>
+
+                    <select id="dropdown">
+                        <option value="">None</option>
+                        <option value="text1">text1</option>
+                        <option value="text2">text2</option>
+                        <option value="text3">text3</option>
+                        <option value="text4">text4</option>
                     </select>
+                    <script type="text/javascript">
+                        var mytextbox = document.getElementById('mytext');
+                        var mydropdown = document.getElementById('dropdown');
                     
-                    <p>When you select a new car, a function is triggered which outputs the value of the selected car.</p>
-                    
-                    <p id="demo"></p>
-                    
-                    <script>
-                        function plzChange() {
-                            var x = document.getElementById("crusts").value;
-                            document.getElementById("demo").innerHTML = "You selected: " + x;
+                        mydropdown.onchange = function(){
+                            mytextbox.value = mytextbox.value  + this.value; //to appened
+                            mytextbox.innerHTML = this.value;
                         }
                     </script>
                 </div>
