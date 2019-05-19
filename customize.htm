@@ -8,9 +8,7 @@
         <div class="text-center">
             <div class="row">
                 <div class="col-md-3">
-                    <h3><strong>Crusts</strong></h3>
-                    <p id="mytext"></p>
-
+                    <h3><strong>Crusts</strong></h3>                    
                     <select id="dropdown">
                         <option value="">None</option>
                         <option value="text1">text1</option>
@@ -18,10 +16,13 @@
                         <option value="text3">text3</option>
                         <option value="text4">text4</option>
                     </select>
+
+                    <span id="mytext"></span>
+
                     <script type="text/javascript">
-                        var mytextbox = document.getElementById('mytext');
-                        var mydropdown = document.getElementById('dropdown');
-                    
+                        var mytextbox = document.getElementById("mytext");
+                        var mydropdown = document.getElementById("dropdown");
+
                         mydropdown.onchange = function(){
                             mytextbox.value = mytextbox.value  + this.value; //to appened
                             mytextbox.innerHTML = this.value;
